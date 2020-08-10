@@ -10,7 +10,6 @@ import UIKit
 
 final class ImagesStackView: UIStackView
 {
-	// MARK: - Property list
 
 	// MARK: - Internal methods
 
