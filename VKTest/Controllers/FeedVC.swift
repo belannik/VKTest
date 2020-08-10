@@ -38,11 +38,13 @@ final class FeedVC: UIViewController
     
     override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
 
+	override func loadView() {
+		setupNavigationBar()
+		setupTableView()
+	}
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
-		setupNavigationBar()
-        setupTableView()
         load()
     }
 
@@ -56,6 +58,7 @@ final class FeedVC: UIViewController
 
     private func setupTableView() {
 		view = tableView
+		tableView.tableFooterView = UIView()
 		tableView.separatorStyle = .singleLine
 		tableView.delegate = self
 		tableView.dataSource = self
